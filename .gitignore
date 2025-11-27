@@ -1,0 +1,69 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+dist/
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env.example
+.env*.local
+backend/.env
+backend/.env.local
+
+# Vercel
+.vercel
+
+# Logs
+logs/
+*.log
+backend/logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# Kiro IDE (keep docs and scripts in repo but ignore other IDE files)
+.kiro/settings/
+.kiro/cache/
+.kiro/temp/
+
+# Helper scripts and docs (moved to .kiro folder)
+# These are development/debugging tools, not part of the main codebase
+*.debug.js
+*.test.sh
+*-temp.js
+*-backup.*
+
+# Relayer state (runtime data)
+relayer-state.json
+backend/relayer-state.json
+
+# Kiro folder (development tools and docs - keep local only)
+.kiro/

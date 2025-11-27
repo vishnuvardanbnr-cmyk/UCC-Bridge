@@ -1,0 +1,25 @@
+{
+  "name": "usdt-bridge-relayer",
+  "version": "1.0.0",
+  "description": "Automated relayer service for USDT Bridge between BSC and Universe Chain",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "node test-connection.js && node test-contracts.js",
+    "test:connection": "node test-connection.js",
+    "test:contracts": "node test-contracts.js"
+  },
+  "keywords": ["bridge", "relayer", "usdt", "bsc", "universe-chain"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^6.9.0",
+    "dotenv": "^16.3.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

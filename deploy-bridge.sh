@@ -18,8 +18,8 @@ NC='\033[0m' # No Color
 # Configuration
 APP_NAME="usdt-bridge"
 APP_DIR="/var/www/$APP_NAME"
-DOMAIN=""  # Will be prompted
-EMAIL=""   # Will be prompted
+DOMAIN="bridge.ucchain.org"  # Will be prompted
+EMAIL="usdtrains@gmail.com"   # Will be prompted
 
 # Logging
 log() {
@@ -207,7 +207,8 @@ create_pm2_config() {
     log "Creating PM2 configuration..."
     cd "$APP_DIR/backend"
 
-    cat > ecosystem.config.js << EOF
+    # Use .cjs extension because package.json has "type": "module"
+    cat > ecosystem.config.cjs << EOF
 module.exports = {
   apps: [{
     name: 'usdt-bridge-relayer',
@@ -304,8 +305,8 @@ start_application() {
     # Stop any existing instance
     pm2 delete $APP_NAME 2>/dev/null || true
 
-    # Start new instance
-    pm2 start ecosystem.config.js
+    # Start new instance (using .cjs extension for ES modules)
+    pm2 start ecosystem.config.cjs
     pm2 save
 
     # Setup PM2 startup script
